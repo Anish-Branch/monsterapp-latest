@@ -29,6 +29,8 @@
 		0EDEE5F32A34ADC200D53CA7 /* LikedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEE5F22A34ADC200D53CA7 /* LikedPage.swift */; };
 		0EDEE5F52A34ADDF00D53CA7 /* CartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEE5F42A34ADDF00D53CA7 /* CartPage.swift */; };
 		0EDEE5F82A34AE0F00D53CA7 /* BranchSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEE5F72A34AE0F00D53CA7 /* BranchSDK */; };
+		F9C248702A372E090002B07D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2486F2A372E090002B07D /* Constants.swift */; };
+		F9C248722A3732C40002B07D /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C248712A3732C40002B07D /* ThemeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		0EDEE5F42A34ADDF00D53CA7 /* CartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPage.swift; sourceTree = "<group>"; };
 		0EDEE5F92A365FEB00D53CA7 /* monsterapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = monsterapp.entitlements; sourceTree = "<group>"; };
 		0EDEE5FA2A36609500D53CA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F9C2486F2A372E090002B07D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F9C248712A3732C40002B07D /* ThemeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 				0EDEE5C02A346B4E00D53CA7 /* ContentView.swift */,
 				0EDEE5C22A346B5000D53CA7 /* Assets.xcassets */,
 				0EDEE5C42A346B5000D53CA7 /* Preview Content */,
+				F9C2486F2A372E090002B07D /* Constants.swift */,
 			);
 			path = monsterapp;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 				0EDEE5E72A34ACF600D53CA7 /* SearchView.swift */,
 				0EDEE5E92A34AD3300D53CA7 /* ProductDetailView.swift */,
 				0EDEE5EB2A34AD5A00D53CA7 /* OrderConfirmationPage.swift */,
+				F9C248712A3732C40002B07D /* ThemeButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 				0EDEE5E02A34ABF800D53CA7 /* LoginPage.swift in Sources */,
 				0EDEE5BF2A346B4E00D53CA7 /* monsterappApp.swift in Sources */,
 				0EDEE5F32A34ADC200D53CA7 /* LikedPage.swift in Sources */,
+				F9C248722A3732C40002B07D /* ThemeButton.swift in Sources */,
 				0EDEE5E42A34AC3400D53CA7 /* MainPage.swift in Sources */,
 				0EDEE5D52A34AAC200D53CA7 /* SharedDataModel.swift in Sources */,
 				0EDEE5F52A34ADDF00D53CA7 /* CartPage.swift in Sources */,
@@ -261,6 +268,7 @@
 				0EDEE5F12A34AD9B00D53CA7 /* ProfilePage.swift in Sources */,
 				0EDEE5CE2A346C1400D53CA7 /* Product.swift in Sources */,
 				0EDEE5DE2A34ABA800D53CA7 /* OnBoardingPage.swift in Sources */,
+				F9C248702A372E090002B07D /* Constants.swift in Sources */,
 				0EDEE5EC2A34AD5A00D53CA7 /* OrderConfirmationPage.swift in Sources */,
 				0EDEE5E22A34AC1500D53CA7 /* CustomCorners.swift in Sources */,
 				0EDEE5EF2A34AD8000D53CA7 /* Home.swift in Sources */,
