@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import BranchSDK
 import AppTrackingTransparency
 import AdSupport
-import BranchSDK
+
 
 struct ContentView: View {
     // Log Status..
