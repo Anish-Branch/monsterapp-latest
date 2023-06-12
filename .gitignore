@@ -1,0 +1,8 @@
+.DS_Store
+**/xcuserdata/*.xcuserdatad/
+Local Hero Consumer/Generated/
+Pods/
+**/.swiftpm/xcode/xcuserdata/
+
+# Temp file used for copy paste detection script
+cpd-output.xml
