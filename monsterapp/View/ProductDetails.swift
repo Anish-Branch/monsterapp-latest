@@ -23,19 +23,21 @@ struct ProductDetails: View {
 
 
     var body: some View {
-        VStack(alignment: .leading) {
-            dismissButton
-               // .padding()
-            productType
-            productTitle
-            productImage
-            buttonsStack
-            Spacer()
-                .frame(height: 20)
-            productSubTitle
-            Spacer()
+        ScrollView {
+            VStack(alignment: .leading) {
+                dismissButton
+                   // .padding()
+                productType
+                productTitle
+                productImage
+                buttonsStack
+                Spacer()
+                    .frame(height: 20)
+                productSubTitle
+                Spacer()
+            }
+            .padding()
         }
-        .padding()
     }
 
     @ViewBuilder
@@ -83,14 +85,14 @@ struct ProductDetails: View {
 
     @ViewBuilder
     var buttonsStack: some View {
-        HStack {
-            ThemeButton(title: "Add to cart") {
+        HStack(spacing: 12) {
+            ThemeButton(title: "Add to cart", fontSize: 18, weight: .medium) {
                 addToCart()
                 branchEventAddToCart()
             }
-            .disabled(isAddedToCart())
+            .disabled(true)
 
-            ThemeButton(title: "Buy now") {
+            ThemeButton(title: "Buy now", fontSize: 18, weight: .medium) {
             }
 
             Button {

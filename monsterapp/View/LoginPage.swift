@@ -10,11 +10,15 @@ import BranchSDK
 
 struct LoginPage: View {
     @StateObject var loginData: LoginPageModel
-    
+    @Environment (\.dismiss) var dismiss
     let uuid = UUID().uuidString
     
     var body: some View {
         VStack {
+            HStack {
+                dismissButton
+                Spacer()
+            }.padding()
             Spacer()
                 .frame(height: 100)
             AppLogo()
@@ -40,6 +44,17 @@ struct LoginPage: View {
         .padding(.horizontal)
         .background(Constants.Colors.appBackground)
         .navigationBarBackButtonHidden()
+    }
+
+    @ViewBuilder
+    var dismissButton: some View {
+        Button {
+            dismiss()
+        } label: {
+            Image(systemName: "arrow.left")
+                .font(.title2)
+                .foregroundColor(Color.black.opacity(0.7))
+        }
     }
 }
 
@@ -81,6 +96,7 @@ struct ThemeTextField: View {
         }
         else {
             TextField(placeholder, text: $text)
+                .textInputAutocapitalization(.never)
                 .padding()
                 .overlay(
                         RoundedRectangle(cornerRadius: 12)
