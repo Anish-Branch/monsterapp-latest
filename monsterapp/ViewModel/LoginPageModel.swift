@@ -34,51 +34,55 @@ class UserDatabase {
 
 class LoginPageModel: ObservableObject {
 
+    init(registerUser: Bool = false) {
+        self.registerUser = registerUser
+    }
+
     // Login Properties..
-     @Published var email: String = ""
-     @Published var password: String = ""
-     @Published var showPassword: Bool = false
-     
-     // Register Properties
-     @Published var registerUser: Bool = false
-     @Published var re_Enter_Password: String = ""
-     @Published var showReEnterPassword: Bool = false
-     
-     // Log Status...
-     @AppStorage("log_Status") var log_Status: Bool = false
-         
-     // Login Call...
-     func Login(){
-     // Do Action Here...
-         guard let user = UserDatabase.getUser(email: email) else {
-             return
-         }
-     withAnimation{
-         if user.password == password {
-             log_Status = true
-             print(log_Status)
-         }
-     }
-     }
+    @Published var email: String = ""
+    @Published var password: String = ""
+    @Published var showPassword: Bool = false
+
+    // Register Properties
+    @Published var registerUser: Bool
+    @Published var re_Enter_Password: String = ""
+    @Published var showReEnterPassword: Bool = false
+
+    // Log Status...
+    @AppStorage("log_Status") var log_Status: Bool = false
+
+    // Login Call...
+    func Login(){
+        // Do Action Here...
+        guard let user = UserDatabase.getUser(email: email) else {
+            return
+        }
+        withAnimation{
+            if user.password == password {
+                log_Status = true
+                print(log_Status)
+            }
+        }
+    }
     
     func Logout(){
-            log_Status = false
-            print(log_Status)
+        log_Status = false
+        print(log_Status)
+    }
+
+    func Register(){
+        // Do Action Here...
+        guard password == re_Enter_Password else {
+            return
         }
-     
-     func Register(){
-     // Do Action Here...
-         guard password == re_Enter_Password else {
-             return
-         }
-     withAnimation{
-         UserDatabase.addUser(email: email, password: password)
-     log_Status = true
-     }
-     }
-     
-     func ForgotPassword(){
-     // Do Action Here...
-     }
-     }
+        withAnimation{
+            UserDatabase.addUser(email: email, password: password)
+            log_Status = true
+        }
+    }
+
+    func ForgotPassword(){
+        // Do Action Here...
+    }
+}
      

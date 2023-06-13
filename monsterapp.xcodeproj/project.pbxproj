@@ -31,6 +31,7 @@
 		0EDEE5F82A34AE0F00D53CA7 /* BranchSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0EDEE5F72A34AE0F00D53CA7 /* BranchSDK */; };
 		F9C248702A372E090002B07D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C2486F2A372E090002B07D /* Constants.swift */; };
 		F9C248722A3732C40002B07D /* ThemeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C248712A3732C40002B07D /* ThemeButton.swift */; };
+		F9C248742A3752670002B07D /* AppLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C248732A3752670002B07D /* AppLogo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		0EDEE5FA2A36609500D53CA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F9C2486F2A372E090002B07D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F9C248712A3732C40002B07D /* ThemeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButton.swift; sourceTree = "<group>"; };
+		F9C248732A3752670002B07D /* AppLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				0EDEE5E92A34AD3300D53CA7 /* ProductDetailView.swift */,
 				0EDEE5EB2A34AD5A00D53CA7 /* OrderConfirmationPage.swift */,
 				F9C248712A3732C40002B07D /* ThemeButton.swift */,
+				F9C248732A3752670002B07D /* AppLogo.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			files = (
 				0EDEE5C12A346B4E00D53CA7 /* ContentView.swift in Sources */,
 				0EDEE5EA2A34AD3300D53CA7 /* ProductDetailView.swift in Sources */,
+				F9C248742A3752670002B07D /* AppLogo.swift in Sources */,
 				0EDEE5E02A34ABF800D53CA7 /* LoginPage.swift in Sources */,
 				0EDEE5BF2A346B4E00D53CA7 /* monsterappApp.swift in Sources */,
 				0EDEE5F32A34ADC200D53CA7 /* LikedPage.swift in Sources */,
