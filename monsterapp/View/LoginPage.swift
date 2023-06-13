@@ -14,36 +14,45 @@ struct LoginPage: View {
     let uuid = UUID().uuidString
     
     var body: some View {
-        VStack {
-            HStack {
-                dismissButton
-                Spacer()
-            }.padding()
-            Spacer()
-                .frame(height: 100)
-            AppLogo()
-            Spacer()
-                .frame(height: 50)
-            VStack(spacing: 20) {
-                ThemeTextField(placeholder: "username", isSecure: false, text: $loginData.email)
-                ThemeTextField(placeholder: "password", isSecure: true, text: $loginData.password)
-                ThemeButton(title: loginData.registerUser ? "Create account" : "Login") {
-                    if loginData.registerUser {
-                        loginData.Register()
+        GeometryReader { reader in
+            ScrollView {
+                VStack {
+                    HStack {
+                        dismissButton
+                        Spacer()
                     }
-                    else {
-                        loginData.Login()
-                        branchEventLogin()
-                        Branch.getInstance().setIdentity(uuid)
-                        print("The Branch user setIdentity is \(uuid)")
+                    .padding(.vertical, 50)
+                    .padding(.horizontal)
+                    Spacer()
+                        .frame(height: 100)
+                    AppLogo()
+                    Spacer()
+                        .frame(height: 50)
+                    VStack(spacing: 20) {
+                        ThemeTextField(placeholder: "username", isSecure: false, text: $loginData.email)
+                        ThemeTextField(placeholder: "password", isSecure: true, text: $loginData.password)
+                        ThemeButton(title: loginData.registerUser ? "Create account" : "Login") {
+                            if loginData.registerUser {
+                                loginData.Register()
+                            }
+                            else {
+                                loginData.Login()
+                                branchEventLogin()
+                                Branch.getInstance().setIdentity(uuid)
+                                print("The Branch user setIdentity is \(uuid)")
+                            }
+                        }
+                        Spacer()
                     }
+                    Spacer()
                 }
+                .frame(minHeight: reader.size.height + 100)
+                .padding(.horizontal)
+                .background(Constants.Colors.appBackground)
+                .navigationBarBackButtonHidden()
             }
-            Spacer()
+            .ignoresSafeArea(.all)
         }
-        .padding(.horizontal)
-        .background(Constants.Colors.appBackground)
-        .navigationBarBackButtonHidden()
     }
 
     @ViewBuilder

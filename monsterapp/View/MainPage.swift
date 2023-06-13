@@ -48,6 +48,8 @@ struct MainPage: View {
 
             TabBarView(currentTab: $currentTab)
         }
+        .ignoresSafeArea(.keyboard, edges: .bottom)
+
 //        .overlay(
 //
 //            ZStack{

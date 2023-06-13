@@ -2,24 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>Your data will be used to provide with personalised content and notifications</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Raleway-SemiBold.ttf</string>
-		<string>Raleway-Regular.ttf</string>
-		<string>Raleway-Bold.ttf</string>
-	</array>
-	<key>branch_universal_link_domains</key>
-	<array>
-		<string>monsterapp.app.link</string>
-		<string>monsterapp-alternate.app.link</string>
-	</array>
-	<key>branch_key</key>
-	<dict>
-		<key>live</key>
-		<string>key_live_ewdms2cWY59SQXhvXvJM6jcmCCnO0w7Y</string>
-	</dict>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -32,6 +14,22 @@
 				<string>monsterapp</string>
 			</array>
 		</dict>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Raleway-SemiBold.ttf</string>
+		<string>Raleway-Regular.ttf</string>
+		<string>Raleway-Bold.ttf</string>
+	</array>
+	<key>branch_key</key>
+	<dict>
+		<key>live</key>
+		<string>key_live_ewdms2cWY59SQXhvXvJM6jcmCCnO0w7Y</string>
+	</dict>
+	<key>branch_universal_link_domains</key>
+	<array>
+		<string>monsterapp.app.link</string>
+		<string>monsterapp-alternate.app.link</string>
 	</array>
 </dict>
 </plist>
