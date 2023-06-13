@@ -21,7 +21,6 @@ struct ProductDetails: View {
     @EnvironmentObject var sharedData: SharedDataModel
     @EnvironmentObject var homeData: HomeViewModel
 
-
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {

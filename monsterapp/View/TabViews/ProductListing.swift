@@ -8,8 +8,21 @@
 import SwiftUI
 
 class ProductListingViewModel: ObservableObject {
-    @Published var products = Product.testProducts
+    @Published var allProducts = Product.testProducts
+    @Published var filteredProducts: [Product] = []
+    @Published var products: [Product] = []
     @Published var searchText = ""
+
+    init() {
+        products = allProducts
+    }
+    func performSearch(text: String) {
+        filteredProducts = allProducts.filter {
+            $0.title.localizedCaseInsensitiveContains(text)
+        }
+
+        products = text.isEmpty ? allProducts : filteredProducts
+    }
 }
 struct ProductListing: View {
     @StateObject var viewModel = ProductListingViewModel()
@@ -18,6 +31,10 @@ struct ProductListing: View {
         VStack {
             SearchField(searchTerm: $viewModel.searchText)
                 .padding()
+                .onChange(of: viewModel.searchText) { searchTerm in
+                    print("Searching for \(searchTerm)")
+                    viewModel.performSearch(text: searchTerm)
+                }
             ScrollView(showsIndicators: false) {
                 ForEach(viewModel.products) { product in
                     VStack {
@@ -35,6 +52,8 @@ struct SearchField: View {
     var body: some View {
         HStack {
             TextField("Search", text: $searchTerm)
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled()
             Image(systemName: "magnifyingglass")
                 .foregroundColor(.gray)
         }
