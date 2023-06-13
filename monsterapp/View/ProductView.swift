@@ -48,10 +48,12 @@ struct ProductView: View {
     @ViewBuilder
     var productType: some View {
         Text(product.type.rawValue)
+            .foregroundColor(.white)
+            .fontWeight(.medium)
             .padding()
             .background(
                 Capsule()
-                    .fill(.bar)
+                    .fill(product.type.color)
                     .frame(maxHeight: 30)
             )
     }
