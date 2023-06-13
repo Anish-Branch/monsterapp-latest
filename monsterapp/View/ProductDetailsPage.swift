@@ -1,5 +1,5 @@
 //
-//  ProductDetails.swift
+//  ProductDetailsPage.swift
 //  monsterapp
 //
 //  Created by Zubair Nagori on 13/06/23.
@@ -8,7 +8,7 @@
 import SwiftUI
 import BranchSDK
 
-struct ProductDetails: View {
+struct ProductDetailsPage: View {
     
     @Environment(\.dismiss) var dismiss
 
@@ -85,11 +85,10 @@ struct ProductDetails: View {
     @ViewBuilder
     var buttonsStack: some View {
         HStack(spacing: 12) {
-            ThemeButton(title: "Add to cart", fontSize: 18, weight: .medium) {
+            ThemeButton(title: "Add to cart", fontSize: 18, weight: .medium, disabled: isAddedToCart()) {
                 addToCart()
                 branchEventAddToCart()
             }
-            .disabled(true)
 
             ThemeButton(title: "Buy now", fontSize: 18, weight: .medium) {
             }
@@ -228,7 +227,7 @@ struct ProductDetails: View {
 
 struct ProductDetails_Previews: PreviewProvider {
     static var previews: some View {
-        ProductDetails(product: Product(type: .ECOMMERCE, title: "Branch Product", subtitle: "This is a test product", productImage: "ECOMMERCE-1"))
+        ProductDetailsPage(product: Product(type: .ECOMMERCE, title: "Branch Product", subtitle: "This is a test product", productImage: "ECOMMERCE-1"))
             .environmentObject(SharedDataModel())
     }
 }

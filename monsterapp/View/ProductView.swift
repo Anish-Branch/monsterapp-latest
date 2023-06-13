@@ -29,7 +29,7 @@ struct ProductView: View {
             productSubTitle
         }
         .fullScreenCover(isPresented: $viewModel.showDetails) {
-            ProductDetails(product: product)
+            ProductDetailsPage(product: product)
         }
         .onTapGesture {
             viewModel.showDetails = true
@@ -73,36 +73,6 @@ struct ProductView: View {
 
     }
 
-    @ViewBuilder
-    var buttonsStack: some View {
-        HStack {
-            ThemeButton(title: "Add to cart") {
-
-            }
-            ThemeButton(title: "Buy now") {
-
-            }
-
-            Button {
-
-            } label: {
-                Image(systemName: "square.and.arrow.up")
-                    .renderingMode(.template)
-                    .foregroundColor(Constants.Colors.themeBlue)
-                    .font(.title)
-            }
-
-            Button {
-
-            } label: {
-                Image(systemName: "bell.fill")
-                    .renderingMode(.template)
-                    .foregroundColor(Constants.Colors.themeBlue)
-                    .font(.title)
-            }
-        }
-        .padding(.horizontal)
-    }
 }
 struct ProductView_Previews: PreviewProvider {
     static var previews: some View {

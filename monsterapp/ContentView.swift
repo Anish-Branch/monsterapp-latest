@@ -15,7 +15,7 @@ struct ContentView: View {
     // Log Status..
     @AppStorage("log_Status") var log_Status: Bool = false
     var body: some View {
-        Group{
+        Group {
             if log_Status{
                 MainPage()
             }
