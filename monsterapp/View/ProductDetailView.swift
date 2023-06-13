@@ -20,19 +20,14 @@ struct ProductDetailView: View {
     
     // Shared Data Model...
     @EnvironmentObject var sharedData: SharedDataModel
-    
     @EnvironmentObject var homeData: HomeViewModel
     
     var body: some View {
-        
         VStack{
-            
             // Title Bar and Product Image...
             VStack{
-                
                 // Title Bar...
                 HStack{
-                    
                     Button {
                         // Closing View...
                         withAnimation(.easeInOut){
@@ -274,7 +269,7 @@ struct ProductDetailView: View {
 struct ProductDetailView_Previews: PreviewProvider {
     static var previews: some View {
         // Sample Product for Building Preview....
-//        ProductDetailView(product: HomeViewModel().products[0])
+//        ProductDetailView(product: HomeViewModel().products[0], animation: <#Namespace.ID#>)
 //            .environmentObject(SharedDataModel())
         
         MainPage()
