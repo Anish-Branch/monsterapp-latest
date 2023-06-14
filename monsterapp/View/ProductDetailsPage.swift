@@ -22,21 +22,20 @@ struct ProductDetailsPage: View {
     @EnvironmentObject var homeData: HomeViewModel
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
+        ScrollView(showsIndicators: false) {
+            VStack(alignment: .leading, spacing: 20) {
                 dismissButton
                    // .padding()
                 productType
                 productTitle
                 productImage
                 buttonsStack
-                Spacer()
-                    .frame(height: 20)
                 productSubTitle
                 Spacer()
             }
             .padding()
         }
+        .background(Constants.Colors.appBackground)
     }
 
     @ViewBuilder
@@ -61,10 +60,12 @@ struct ProductDetailsPage: View {
     @ViewBuilder
     var productType: some View {
         Text(product.type.rawValue)
+            .foregroundColor(.white)
+            .fontWeight(.medium)
             .padding()
             .background(
                 Capsule()
-                    .fill(.bar)
+                    .fill(product.type.color)
                     .frame(maxHeight: 30)
             )
     }
