@@ -26,20 +26,25 @@ struct MainPage: View {
         VStack {
             // Tab View...
             TabView(selection: $currentTab) {
-                ProductListing()
+                ReferAFriendView()
                     .environmentObject(sharedData)
                     .tag(Tab.Home)
 
-                LikedPage()
+                ProductListing()
                     .environmentObject(sharedData)
-                    .tag(Tab.Liked)
+                    .tag(Tab.Menu)
 
                 ProfilePage()
                     .tag(Tab.Profile)
 
+                /* Old Code
+                LikedPage()
+                    .environmentObject(sharedData)
+                    .tag(Tab.Liked)
                 CartPage()
                     .environmentObject(sharedData)
                     .tag(Tab.Cart)
+                 */
             }
 
             TabBarView(currentTab: $currentTab)
@@ -50,7 +55,8 @@ struct MainPage: View {
                 guard let userInfo = notification.userInfo as? Dictionary<String, Any> else {return}
                
                 if let productIDURL = userInfo["product_id"] as? String {
-                    let productID = productIDURL.replacingOccurrences(of: "https://www.branch.io/", with: "")
+                    //let productID = productIDURL.replacingOccurrences(of: "https://www.branch.io/", with: "")
+                    let productID = productIDURL.replacingOccurrences(of: "https://monster-site.github.io/shop/item-detail.html?id=1", with: "")
                     print("UserID = \(productID)")
                     let homeViewModel = HomeViewModel()
                    let filteredProducts =  homeViewModel.products.filter {$0.productId == productID}
@@ -77,10 +83,15 @@ enum Tab: String,CaseIterable{
     
     // Raw Value must be image Name in asset..
     case Home = "Home"
-    case Liked = "Liked"
     case Profile = "Profile"
-    case Cart = "Cart"
-}
+    case Menu = "Menu"
+    
+    /* Old Code
+    //case Liked = "Liked"
+    //case Cart = "Cart"
+    */
+    
+     }
 
 struct TabBarView: View {
     @Binding var currentTab: Tab
@@ -101,7 +112,7 @@ struct TabBarView: View {
                     // Applying little shadow at bg...
                         .background(
 
-                            Color("Purple")
+                            Color("ThemeButtonColor")
                                 .opacity(0.1)
                                 .cornerRadius(5)
                             // blurring...
@@ -112,7 +123,7 @@ struct TabBarView: View {
 
                         )
                         .frame(maxWidth: .infinity)
-                        .foregroundColor(currentTab == tab ? Color("Purple") : Color.black.opacity(0.3))
+                        .foregroundColor(currentTab == tab ? Color("ThemeButtonColor") : Color.black.opacity(0.3))
                 }
             }
         }

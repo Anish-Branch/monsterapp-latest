@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E61B3382A3A1E7500E03598 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E61B3372A3A1E7500E03598 /* CoreServices.framework */; };
+		0E61B33A2A3A1E8300E03598 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E61B3392A3A1E8300E03598 /* SystemConfiguration.framework */; };
+		0E61B33C2A3A1E8C00E03598 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E61B33B2A3A1E8C00E03598 /* CoreTelephony.framework */; };
+		0E61B33E2A3A1E9500E03598 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E61B33D2A3A1E9400E03598 /* WebKit.framework */; };
+		0E61B3402A3A1E9C00E03598 /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E61B33F2A3A1E9C00E03598 /* CoreSpotlight.framework */; };
+		0E61B3422A3A1EA400E03598 /* AdServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E61B3412A3A1EA300E03598 /* AdServices.framework */; };
+		0E61B3442A3A1EAA00E03598 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E61B3432A3A1EAA00E03598 /* AdSupport.framework */; };
+		0E61B3462A3A1EB200E03598 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E61B3452A3A1EB200E03598 /* StoreKit.framework */; };
+		0E61B3482A3A1EB900E03598 /* LinkPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E61B3472A3A1EB900E03598 /* LinkPresentation.framework */; };
 		0EDEE5BF2A346B4E00D53CA7 /* monsterappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEE5BE2A346B4E00D53CA7 /* monsterappApp.swift */; };
 		0EDEE5C12A346B4E00D53CA7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDEE5C02A346B4E00D53CA7 /* ContentView.swift */; };
 		0EDEE5C32A346B5000D53CA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDEE5C22A346B5000D53CA7 /* Assets.xcassets */; };
@@ -39,6 +48,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E61B3372A3A1E7500E03598 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		0E61B3392A3A1E8300E03598 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0E61B33B2A3A1E8C00E03598 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		0E61B33D2A3A1E9400E03598 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		0E61B33F2A3A1E9C00E03598 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
+		0E61B3412A3A1EA300E03598 /* AdServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdServices.framework; path = System/Library/Frameworks/AdServices.framework; sourceTree = SDKROOT; };
+		0E61B3432A3A1EAA00E03598 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		0E61B3452A3A1EB200E03598 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		0E61B3472A3A1EB900E03598 /* LinkPresentation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LinkPresentation.framework; path = System/Library/Frameworks/LinkPresentation.framework; sourceTree = SDKROOT; };
 		0EDEE5BB2A346B4E00D53CA7 /* monsterapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = monsterapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EDEE5BE2A346B4E00D53CA7 /* monsterappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = monsterappApp.swift; sourceTree = "<group>"; };
 		0EDEE5C02A346B4E00D53CA7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,18 +98,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E61B3462A3A1EB200E03598 /* StoreKit.framework in Frameworks */,
+				0E61B33E2A3A1E9500E03598 /* WebKit.framework in Frameworks */,
+				0E61B3442A3A1EAA00E03598 /* AdSupport.framework in Frameworks */,
+				0E61B33C2A3A1E8C00E03598 /* CoreTelephony.framework in Frameworks */,
+				0E61B3402A3A1E9C00E03598 /* CoreSpotlight.framework in Frameworks */,
 				0EDEE5F82A34AE0F00D53CA7 /* BranchSDK in Frameworks */,
+				0E61B3482A3A1EB900E03598 /* LinkPresentation.framework in Frameworks */,
+				0E61B33A2A3A1E8300E03598 /* SystemConfiguration.framework in Frameworks */,
+				0E61B3382A3A1E7500E03598 /* CoreServices.framework in Frameworks */,
+				0E61B3422A3A1EA400E03598 /* AdServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E61B3362A3A1E7400E03598 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E61B3472A3A1EB900E03598 /* LinkPresentation.framework */,
+				0E61B3452A3A1EB200E03598 /* StoreKit.framework */,
+				0E61B3432A3A1EAA00E03598 /* AdSupport.framework */,
+				0E61B3412A3A1EA300E03598 /* AdServices.framework */,
+				0E61B33F2A3A1E9C00E03598 /* CoreSpotlight.framework */,
+				0E61B33D2A3A1E9400E03598 /* WebKit.framework */,
+				0E61B33B2A3A1E8C00E03598 /* CoreTelephony.framework */,
+				0E61B3392A3A1E8300E03598 /* SystemConfiguration.framework */,
+				0E61B3372A3A1E7500E03598 /* CoreServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0EDEE5B22A346B4E00D53CA7 = {
 			isa = PBXGroup;
 			children = (
 				0EDEE5BD2A346B4E00D53CA7 /* monsterapp */,
 				0EDEE5BC2A346B4E00D53CA7 /* Products */,
+				0E61B3362A3A1E7400E03598 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -422,7 +466,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"monsterapp/Preview Content\"";
-				DEVELOPMENT_TEAM = A34XSTF567;
+				DEVELOPMENT_TEAM = 66862GF39B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = monsterapp/Info.plist;
@@ -437,7 +481,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.anishsomani.monsterapp1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anishsomani.monsterapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -454,7 +498,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"monsterapp/Preview Content\"";
-				DEVELOPMENT_TEAM = A34XSTF567;
+				DEVELOPMENT_TEAM = 66862GF39B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = monsterapp/Info.plist;
@@ -469,7 +513,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.anishsomani.monsterapp1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anishsomani.monsterapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

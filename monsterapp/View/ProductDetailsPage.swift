@@ -2,7 +2,7 @@
 //  ProductDetailsPage.swift
 //  monsterapp
 //
-//  Created by Zubair Nagori on 13/06/23.
+//  Created by Anish Somani on 13/06/23.
 //
 
 import SwiftUI

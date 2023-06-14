@@ -31,7 +31,7 @@ struct ProfilePage: View {
 
                 ThemeButton(title: "Refer a friend") {
                     //Show refer a friend screen
-                    showReferAFriendView = true
+                    //showReferAFriendView = true
                 }
                 ThemeButton(title: "Logout") {
                     loginData.Logout()

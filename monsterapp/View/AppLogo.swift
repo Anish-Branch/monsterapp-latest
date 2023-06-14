@@ -2,7 +2,7 @@
 //  AppLogo.swift
 //  monsterapp
 //
-//  Created by Zubair Nagori on 12/06/23.
+//  Created by Anish Somani on 12/06/23.
 //
 
 import SwiftUI

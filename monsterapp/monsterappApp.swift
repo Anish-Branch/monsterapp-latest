@@ -59,6 +59,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         
         // Branch.io - Function used to enable Branch logging
         Branch.getInstance().enableLogging()
+        Branch.getInstance().validateSDKIntegration()
         
         // enable pasteboard check
         Branch.getInstance().checkPasteboardOnInstall()

@@ -25,11 +25,15 @@
 	<dict>
 		<key>live</key>
 		<string>key_live_ewdms2cWY59SQXhvXvJM6jcmCCnO0w7Y</string>
+		<key>test</key>
+		<string>key_test_otnmF5gXZ15LL3ly7zRI2gphsyoR8Okf</string>
 	</dict>
 	<key>branch_universal_link_domains</key>
 	<array>
 		<string>monsterapp.app.link</string>
 		<string>monsterapp-alternate.app.link</string>
+		<string>monsterapp.test-app.link</string>
+		<string>monsterapp-alternate.test-app.link</string>
 	</array>
 </dict>
 </plist>
