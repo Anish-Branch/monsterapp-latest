@@ -24,7 +24,7 @@ struct ProductDetailsPage: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 20) {
-                dismissButton
+                BackButton { dismiss() }
                    // .padding()
                 productType
                 productTitle
@@ -38,16 +38,6 @@ struct ProductDetailsPage: View {
         .background(Constants.Colors.appBackground)
     }
 
-    @ViewBuilder
-    var dismissButton: some View {
-        Button {
-            dismiss()
-        } label: {
-            Image(systemName: "arrow.left")
-                .font(.title2)
-                .foregroundColor(Color.black.opacity(0.7))
-        }
-    }
     @ViewBuilder
     var productImage: some View {
         Image(product.productImage)

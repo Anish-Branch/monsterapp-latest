@@ -18,7 +18,7 @@ struct LoginPage: View {
             ScrollView {
                 VStack {
                     HStack {
-                        dismissButton
+                        BackButton { dismiss }
                         Spacer()
                     }
                     .padding(.vertical, 50)
@@ -52,17 +52,6 @@ struct LoginPage: View {
                 .navigationBarBackButtonHidden()
             }
             .ignoresSafeArea(.all)
-        }
-    }
-
-    @ViewBuilder
-    var dismissButton: some View {
-        Button {
-            dismiss()
-        } label: {
-            Image(systemName: "arrow.left")
-                .font(.title2)
-                .foregroundColor(Color.black.opacity(0.7))
         }
     }
 }
