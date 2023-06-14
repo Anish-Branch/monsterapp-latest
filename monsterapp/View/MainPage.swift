@@ -24,12 +24,8 @@ struct MainPage: View {
     var body: some View {
         
         VStack {
-            
             // Tab View...
             TabView(selection: $currentTab) {
-//                Home(animation: animation)
-//                    .environmentObject(sharedData)
-//                    .tag(Tab.Home)
                 ProductListing()
                     .environmentObject(sharedData)
                     .tag(Tab.Home)
@@ -49,20 +45,6 @@ struct MainPage: View {
             TabBarView(currentTab: $currentTab)
         }
         .ignoresSafeArea(.keyboard, edges: .bottom)
-
-//        .overlay(
-//
-//            ZStack{
-//                // Detail Page...
-//                if let product = sharedData.detailProduct,sharedData.showDetailProduct{
-//                    ProductDetailView(product: product, animation: animation)
-//                        .environmentObject(sharedData)
-//                    // adding transitions...
-//                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .opacity))
-//                }
-//            }
-//            // Branch.io - Handle a deep link that contains a product ID, retrieving the corresponding product information from a data source, and updating the view's state to display the product details.
-//        )
         .onAppear{
             NotificationCenter.default.addObserver(forName: Notification.Name("HANDLEDEEPLINK"), object: nil, queue: nil) { notification in
                 guard let userInfo = notification.userInfo as? Dictionary<String, Any> else {return}

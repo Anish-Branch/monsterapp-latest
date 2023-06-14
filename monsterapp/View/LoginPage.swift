@@ -18,7 +18,7 @@ struct LoginPage: View {
             ScrollView {
                 VStack {
                     HStack {
-                        BackButton { dismiss }
+                        BackButton { dismiss() }
                         Spacer()
                     }
                     .padding(.vertical, 50)

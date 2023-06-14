@@ -51,9 +51,7 @@ class HomeViewModel: ObservableObject {
         Product(type: .Gears, title: "Gear Grinder", subtitle: "Gears Monster", price: "$5", productImage: "gears-2", productId: "gears-2", sellingPrice: 5.00),
         Product(type: .Gears, title: "Piston Punisher", subtitle: "Gears Monster", price: "$5", productImage: "gears-3", productId: "gears-3", sellingPrice: 5.00),
         Product(type: .Gears, title: "Gearhead Ghoul", subtitle: "Gears Monster", price: "$5", productImage: "gears-4", productId: "gears-4", sellingPrice: 5.00),
-         
         */
-        
         Product(type: .ECOMMERCE, title: "Little Critter", subtitle: "ECOMMERCE", price: "$5", productImage: "ECOMMERCE-1", productId: "ECOMMERCE-1", sellingPrice: 5.00),
         Product(type: .ENTERTAINMENT, title: "Snugglebug", subtitle: "ENTERTAINMENT", price: "$5", productImage: "ENTERTAINMENT-1", productId: "ENTERTAINMENT-1", sellingPrice: 5.00),
         Product(type: .FINANCE, title: "Cuddlekins", subtitle: "FINANCE", price: "$5", productImage: "FINANCE-1", productId: "FINANCE-1", sellingPrice: 5.00),
@@ -62,7 +60,6 @@ class HomeViewModel: ObservableObject {
         Product(type: .QSR, title: "Pipsqueak", subtitle: "QSR", price: "$5", productImage: "QSR-1", productId: "QSR-1", sellingPrice: 5.00),
         Product(type: .RETAIL, title: "Starbeast", subtitle: "RETAIL", price: "$5", productImage: "RETAIL-1", productId: "RETAIL-1", sellingPrice: 5.00),
         Product(type: .TRAVEL, title: "Astrocreep", subtitle: "TRAVEL", price: "$5", productImage: "TRAVEL-1", productId: "TRAVEL-1", sellingPrice: 5.00),
-        
     ]
     
     // Filtered Products...

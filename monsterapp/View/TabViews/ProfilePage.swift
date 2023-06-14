@@ -17,7 +17,7 @@ struct ProfilePage: View {
             VStack(spacing: 20) {
                 Spacer()
                     .frame(height: 50)
-                Text("Hello, Anish!")
+                Text("Hello, \(userName ?? "")")
                     .font(.system(size: 25, weight: .bold))
                 Spacer().frame(height: 40)
                 Image(systemName: "person.circle.fill")
@@ -26,7 +26,7 @@ struct ProfilePage: View {
                     .frame(width: 120, height: 120)
                     .foregroundColor(Color(UIColor.lightGray))
                     .scaledToFit()
-                Text("amnahawks")
+                Text(userName ?? "")
                     .font(.system(size: 18, weight: .medium))
 
                 ThemeButton(title: "Refer a friend") {
@@ -46,6 +46,10 @@ struct ProfilePage: View {
                 ReferAFriendView()
             }
         }
+    }
+
+    var userName: String? {
+        loginData.loggedInUserName
     }
 }
 

@@ -8,7 +8,7 @@
 import SwiftUI
 
 class ProductListingViewModel: ObservableObject {
-    @Published var allProducts = Product.testProducts
+    @Published var allProducts = HomeViewModel().products
     @Published var filteredProducts: [Product] = []
     @Published var products: [Product] = []
     @Published var searchText = ""

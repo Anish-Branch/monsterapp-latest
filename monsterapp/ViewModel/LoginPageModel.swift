@@ -59,6 +59,7 @@ class LoginPageModel: ObservableObject {
         }
         withAnimation{
             if user.password == password {
+                loggedInUserName = email
                 log_Status = true
                 print(log_Status)
             }
@@ -66,23 +67,34 @@ class LoginPageModel: ObservableObject {
     }
     
     func Logout(){
+        loggedInUserName = nil
         log_Status = false
         print(log_Status)
     }
 
     func Register(){
         // Do Action Here...
-        guard password == re_Enter_Password else {
+        guard !password.isEmpty else {
             return
         }
         withAnimation{
             UserDatabase.addUser(email: email, password: password)
+            loggedInUserName = email
             log_Status = true
         }
     }
 
     func ForgotPassword(){
         // Do Action Here...
+    }
+
+    var loggedInUserName: String? {
+        get {
+            UserDefaults.standard.string(forKey: "loggedInUserEmail")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "loggedInUserEmail")
+        }
     }
 }
      

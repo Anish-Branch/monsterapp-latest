@@ -14,6 +14,7 @@ enum SelectionType: Int, Identifiable {
     var id: Int { rawValue }
     case login
     case register
+    case guest
 }
 
 class OnboardingViewModel: ObservableObject {
@@ -48,13 +49,21 @@ struct OnBoardingPage: View {
             }
 
             Spacer()
-            Button("Continue as guest") {}
+            Button("Continue as guest") {
+                //Show the main pge here.
+                viewModel.selectionType = .guest
+            }
             .fontWeight(.bold)
             .foregroundColor(Constants.Colors.themeBlue)
         }
         .background(Constants.Colors.appBackground)
         .fullScreenCover(item: $viewModel.selectionType) { selectionType in
-            LoginPage(loginData: LoginPageModel(registerUser: selectionType == .register ? true : false))
+            switch selectionType {
+            case .guest:
+                MainPage()
+            default:
+                LoginPage(loginData: LoginPageModel(registerUser: selectionType == .register ? true : false))
+            }
         }
     }
 }
