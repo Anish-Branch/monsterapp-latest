@@ -13,6 +13,7 @@ struct MainPage: View {
     // Current Tab...
     @State var currentTab: Tab = .Home
     @StateObject var sharedData: SharedDataModel = SharedDataModel()
+    @State private var selectedProduct: Product?
     
     // Animation Namespace...
     @Namespace var animation
@@ -62,11 +63,16 @@ struct MainPage: View {
                    let filteredProducts =  homeViewModel.products.filter {$0.productId == productID}
                     print("filter product == \(filteredProducts)")
                     if filteredProducts.count != 0 {
-                        sharedData.detailProduct = filteredProducts[0]
-                        sharedData.showDetailProduct = true
+//                        sharedData.detailProduct = filteredProducts[0]
+//                        sharedData.showDetailProduct = true
+                        selectedProduct = filteredProducts.first
                     }
                 }
             }
+        }
+        .fullScreenCover(item: $selectedProduct) { product in
+            ProductDetailsPage(product: product)
+                .environmentObject(sharedData)
         }
     }
 }
