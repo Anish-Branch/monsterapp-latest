@@ -57,7 +57,9 @@ struct MainPage: View {
                
                 if let productIDURL = userInfo["product_id"] as? String {
                     //let productID = productIDURL.replacingOccurrences(of: "https://www.branch.io/", with: "")
-                    let productID = productIDURL.replacingOccurrences(of: "https://monster-site.github.io/shop/item-detail.html?id=1", with: "")
+//                    let productID = productIDURL.replacingOccurrences(of: "https://monster-site.github.io/shop/item-detail.html?id=1", with: "")
+                    let productID = productIDURL.replacingOccurrences(of: "https://www.branch.io/", with: "")
+
                     print("UserID = \(productID)")
                     let homeViewModel = HomeViewModel()
                    let filteredProducts =  homeViewModel.products.filter {$0.productId == productID}
