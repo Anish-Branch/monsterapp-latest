@@ -11,13 +11,13 @@ import UserNotifications
 
 struct ProfilePage: View {
     @State private var showReferAFriendView = false
-    @StateObject var loginData: LoginPageModel = LoginPageModel()
+    @EnvironmentObject var loginData: LoginPageModel
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
                 Spacer()
                     .frame(height: 50)
-                Text("Hello, \(userName ?? "")")
+                Text("Hello \(userName ?? "")!")
                     .font(.system(size: 25, weight: .bold))
                 Spacer().frame(height: 40)
                 Image(systemName: "person.circle.fill")

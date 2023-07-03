@@ -28,12 +28,12 @@ struct ProductView: View {
                 .frame(height: 20)
             productSubTitle
         }
-        .fullScreenCover(isPresented: $viewModel.showDetails) {
-            ProductDetailsPage(product: product)
-        }
-        .onTapGesture {
-            viewModel.showDetails = true
-        }
+//        .fullScreenCover(isPresented: $viewModel.showDetails) {
+//            ProductDetailsPage(product: product)
+//        }
+//        .onTapGesture {
+//            viewModel.showDetails = true
+//        }
     }
 
     @ViewBuilder

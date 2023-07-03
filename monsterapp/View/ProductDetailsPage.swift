@@ -9,14 +9,14 @@ import SwiftUI
 import BranchSDK
 
 struct ProductDetailsPage: View {
-    
+
     @Environment(\.dismiss) var dismiss
 
     let product: Product
 
     internal var buo = BranchUniversalObject()
     internal var lp = BranchLinkProperties()
-
+    
     // Shared Data Model...
     @EnvironmentObject var sharedData: SharedDataModel
     @EnvironmentObject var homeData: HomeViewModel
@@ -65,36 +65,31 @@ struct ProductDetailsPage: View {
         Text(product.title)
             .font(.title)
             .fontWeight(.semibold)
-
     }
 
     @ViewBuilder
     var productSubTitle: some View {
-        Text(product.subtitle)
+        Text("Branch provides the industry's leading mobile linking and measurement platforms, unifying user experience and attribution across devices, platforms and channels.")
+
     }
 
     @ViewBuilder
     var buttonsStack: some View {
         HStack(spacing: 12) {
-            ThemeButton(title: "Add to cart", fontSize: 18, weight: .medium, disabled: isAddedToCart()) {
+            ThemeButton(title: "Add to cart", fontSize: 18, weight: .medium) {
                 addToCart()
                 branchEventAddToCart()
             }
-
             ThemeButton(title: "Buy now", fontSize: 18, weight: .medium) {
             }
-
             Button {
-                didTapShareDeepLink()
             } label: {
                 Image(systemName: "square.and.arrow.up")
                     .renderingMode(.template)
                     .foregroundColor(Constants.Colors.themeBlue)
                     .font(.title)
             }
-
             Button {
-
             } label: {
                 Image(systemName: "bell.fill")
                     .renderingMode(.template)
@@ -105,23 +100,19 @@ struct ProductDetailsPage: View {
         .padding(.horizontal)
     }
 
-
     func isLiked()->Bool{
-
         return sharedData.likedProducts.contains { product in
             return self.product.id == product.id
         }
     }
 
     func isAddedToCart()->Bool{
-
         return sharedData.cartProducts.contains { product in
             return self.product.id == product.id
         }
     }
 
     func addToLiked(){
-
         if let index = sharedData.likedProducts.firstIndex(where: { product in
             return self.product.id == product.id
         }){
@@ -135,7 +126,6 @@ struct ProductDetailsPage: View {
     }
 
     func addToCart(){
-
         if let index = sharedData.cartProducts.firstIndex(where: { product in
             return self.product.id == product.id
         }){
@@ -147,20 +137,20 @@ struct ProductDetailsPage: View {
             sharedData.cartProducts.append(product)
         }
     }
+
     // Branch.io - Track Event - Add To Cart
     func branchEventAddToCart(){
         // Create a BranchUniversalObject with your content data:
         let branchUniversalObject = BranchUniversalObject.init()
-
         // ...add data to the branchUniversalObject as needed...
         branchUniversalObject.title               = product.title
-
         branchUniversalObject.contentMetadata.contentSchema     = .commerceProduct
         branchUniversalObject.contentMetadata.quantity          = 1
         branchUniversalObject.contentMetadata.price             = product.sellingPrice
         branchUniversalObject.contentMetadata.currency          = .USD
         branchUniversalObject.contentMetadata.productName       = product.title
         branchUniversalObject.contentMetadata.productVariant    = product.subtitle
+
 
         // Create a BranchEvent:
         let event = BranchEvent.standardEvent(.addToCart)
@@ -183,18 +173,16 @@ struct ProductDetailsPage: View {
         buo.imageUrl = "https://branch.io/img/logo-dark.svg"
         buo.publiclyIndex = true
         buo.locallyIndex = true
-        buo.canonicalUrl = "https://www.branch.io/\(product.productId)"
+        buo.canonicalUrl = "https://monster-site.github.io/shop/item-detail.html?id=/\(product.productId)"
 
         // Branch.io - Set Deep Link Properties
-
         lp.channel = "In-app"
         lp.feature = "sharing"
         lp.campaign = "messaging"
         lp.addControlParam("$desktop_url", withValue: "https://help.branch.io/")
-        lp.addControlParam("$ios_url", withValue: "https://help.branch.io/developers-hub/docs/ios-sdk-overview")
-        lp.addControlParam("$android_url", withValue: "https://help.branch.io/developers-hub/docs/android-sdk-overview")
-        lp.addControlParam("$canonical_url", withValue: "https://www.branch.io/\(product.productId)")
-
+        lp.addControlParam("$ios_url", withValue: "https://monster-site.github.io/shop/items.html")
+        lp.addControlParam("$android_url", withValue: "https://monster-site.github.io/shop/items.html")
+        lp.addControlParam("$canonical_url", withValue: "https://monster-site.github.io/shop/item-detail.html?id=/\(product.productId)")
         buo.getShortUrl(with: lp) { url, error in
                 print(url ?? "")
             }

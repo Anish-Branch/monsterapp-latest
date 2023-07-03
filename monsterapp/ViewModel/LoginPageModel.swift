@@ -19,6 +19,8 @@ class UserDatabase {
         User(email: "oshpilev@branch.io", password: "Proserve"),
         User(email: "proserve.test@branch.io", password: "Proserve"),
         User(email: "Proserve.test@branch.io", password: "Proserve"),
+        User(email: "Pua", password: "Training"),
+        User(email: "Amma", password: "Training"),
         User(email: "", password: ""),
         User(email: " ", password: " ")
     ]

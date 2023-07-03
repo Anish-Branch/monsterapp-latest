@@ -26,6 +26,7 @@ class ProductListingViewModel: ObservableObject {
 }
 struct ProductListing: View {
     @StateObject var viewModel = ProductListingViewModel()
+    @EnvironmentObject var sharedData: SharedDataModel
 
     var body: some View {
         VStack {
@@ -39,6 +40,9 @@ struct ProductListing: View {
                 ForEach(viewModel.products) { product in
                     VStack {
                         ProductView(product: product)
+                            .onTapGesture {
+                                sharedData.selectedProduct = product
+                            }
                     }
                 }
             }.padding(.horizontal)

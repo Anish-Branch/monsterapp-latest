@@ -14,14 +14,17 @@ import UserNotifications
 
 @main
 struct monsterappApp: App {
+    @StateObject var sharedData: SharedDataModel = SharedDataModel()
+    @StateObject var loginData: LoginPageModel = LoginPageModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(sharedData)
+                .environmentObject(loginData)
                 .onOpenURL(perform: { url in
                     Branch.getInstance().handleDeepLink(url)
                     //Branch.getInstance().handleDeepLink(withNewSession: URL(string: "https://ecommerce-demo.app.link/e41XMrABhxb"))
-                
                 })
         }
     }
@@ -59,7 +62,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         
         // Branch.io - Function used to enable Branch logging
         Branch.getInstance().enableLogging()
-        Branch.getInstance().validateSDKIntegration()
+        //Branch.getInstance().validateSDKIntegration()
         
         // enable pasteboard check
         Branch.getInstance().checkPasteboardOnInstall()
@@ -70,9 +73,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             print(params as? [String: AnyObject] ?? {})
             
             // Branch.io - Check for a "productId" parameter and navigate to the corresponding view
-            if let productId = params?["$canonical_url"] as? String {
+            if let canonicalUrl = params?["$canonical_url"] as? String {
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4, execute:{
-                    NotificationCenter.default.post(name: Notification.Name("HANDLEDEEPLINK"), object: nil, userInfo: ["product_id": productId])
+                    NotificationCenter.default.post(name: Notification.Name("HANDLEDEEPLINK"), object: nil, userInfo: ["canonicalUrl": canonicalUrl])
                 })
             }
             // Branch.getInstance().setRequestMetadataKey("{ANALYTICS_ID}", value: [...])

@@ -21,13 +21,14 @@ struct ReferAFriendView: View {
             }
             Spacer()
                 .frame(height: 30)
-            Text("Lorem ipsum sit, amet coetur")
+            Text("Branch University MonsterApp")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod")
-            ThemeButton(title: "Refer a friend") {
+            Text("Monsters of every type to delight and cause a smile.")
+            /*ThemeButton(title: "Refer a friend")
+            {
                 //TODO: Add action
-            }
+            }*/
             Spacer()
         }
         .ignoresSafeArea()

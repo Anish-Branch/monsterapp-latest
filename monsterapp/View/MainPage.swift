@@ -11,9 +11,8 @@ import BranchSDK
 struct MainPage: View {
     
     // Current Tab...
-    @State var currentTab: Tab = .Home
-    @StateObject var sharedData: SharedDataModel = SharedDataModel()
-    @State private var selectedProduct: Product?
+    @EnvironmentObject var sharedData: SharedDataModel
+    @EnvironmentObject var loginData: LoginPageModel
     
     // Animation Namespace...
     @Namespace var animation
@@ -26,13 +25,11 @@ struct MainPage: View {
         
         VStack {
             // Tab View...
-            TabView(selection: $currentTab) {
+            TabView(selection: $sharedData.currentTab) {
                 ReferAFriendView()
-                    .environmentObject(sharedData)
                     .tag(Tab.Home)
 
                 ProductListing()
-                    .environmentObject(sharedData)
                     .tag(Tab.Menu)
 
                 ProfilePage()
@@ -48,33 +45,11 @@ struct MainPage: View {
                  */
             }
 
-            TabBarView(currentTab: $currentTab)
+            TabBarView(currentTab: $sharedData.currentTab)
         }
         .ignoresSafeArea(.keyboard, edges: .bottom)
-        .onAppear{
-            NotificationCenter.default.addObserver(forName: Notification.Name("HANDLEDEEPLINK"), object: nil, queue: nil) { notification in
-                guard let userInfo = notification.userInfo as? Dictionary<String, Any> else {return}
-               
-                if let productIDURL = userInfo["product_id"] as? String {
-                    //let productID = productIDURL.replacingOccurrences(of: "https://www.branch.io/", with: "")
-//                    let productID = productIDURL.replacingOccurrences(of: "https://monster-site.github.io/shop/item-detail.html?id=1", with: "")
-                    let productID = productIDURL.replacingOccurrences(of: "https://www.branch.io/", with: "")
-
-                    print("UserID = \(productID)")
-                    let homeViewModel = HomeViewModel()
-                   let filteredProducts =  homeViewModel.products.filter {$0.productId == productID}
-                    print("filter product == \(filteredProducts)")
-                    if filteredProducts.count != 0 {
-//                        sharedData.detailProduct = filteredProducts[0]
-//                        sharedData.showDetailProduct = true
-                        selectedProduct = filteredProducts.first
-                    }
-                }
-            }
-        }
-        .fullScreenCover(item: $selectedProduct) { product in
+        .fullScreenCover(item: $sharedData.selectedProduct) { product in
             ProductDetailsPage(product: product)
-                .environmentObject(sharedData)
         }
     }
 }

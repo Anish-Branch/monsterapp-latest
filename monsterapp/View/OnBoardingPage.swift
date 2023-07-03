@@ -17,12 +17,12 @@ enum SelectionType: Int, Identifiable {
     case guest
 }
 
-class OnboardingViewModel: ObservableObject {
-    @Published var selectionType: SelectionType?
-}
+//class OnboardingViewModel: ObservableObject {
+//    @Published var selectionType: SelectionType?
+//}
 
 struct OnBoardingPage: View {
-    @StateObject var viewModel = OnboardingViewModel()
+    @EnvironmentObject var viewModel: SharedDataModel
     var body: some View {
         VStack {
             Spacer()
@@ -34,7 +34,7 @@ struct OnBoardingPage: View {
             VStack {
                 Text("Existing User?")
                 ThemeButton(title: "Login") {
-                    viewModel.selectionType = .login
+                    viewModel.logInTypeSelection = .login
                 }
                 .padding(.horizontal, 20)
             }
@@ -43,7 +43,7 @@ struct OnBoardingPage: View {
             VStack {
                 Text("New User?")
                 ThemeButton(title: "Create account") {
-                    viewModel.selectionType = .register
+                    viewModel.logInTypeSelection = .register
                 }
                 .padding(.horizontal, 20)
             }
@@ -58,7 +58,7 @@ struct OnBoardingPage: View {
             .foregroundColor(Constants.Colors.themeBlue)
         }
         .background(Constants.Colors.appBackground)
-        .fullScreenCover(item: $viewModel.selectionType) { selectionType in
+        .fullScreenCover(item: $viewModel.logInTypeSelection) { selectionType in
             switch selectionType {
 //            case .guest:
 //                //Not used anymore and can be safely removed

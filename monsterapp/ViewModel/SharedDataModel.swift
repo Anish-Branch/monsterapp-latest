@@ -12,6 +12,13 @@ class SharedDataModel: ObservableObject {
     // Detail Product Data....
     @Published var detailProduct: Product?
     @Published var showDetailProduct: Bool = false
+    @Published var selectedProduct: Product?
+    
+    //Home view selected tab
+    @Published var currentTab: Tab = .Home
+    
+    // OnBoarding View Login Type
+    @Published var logInTypeSelection: SelectionType?
     
     // matched Geoemtry Effect from Search page...
     @Published var fromSearchPage: Bool = false
